@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white z-50">
+    <header className="fixed top-0 left-0 right-0 bg-background z-50">
       <div className="max-w-[1600px] mx-auto px-8 py-6 flex items-baseline justify-between">
         {/* Left: Name */}
         <div className="flex items-baseline gap-2">

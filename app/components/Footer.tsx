@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="fixed bottom-0 left-0 right-0 bg-white">
+    <footer className="fixed bottom-0 left-0 right-0 bg-background">
       <div className="max-w-[1600px] mx-auto px-8 py-6 flex items-end justify-between">
         {/* Left: Dense metadata */}
         <div className="font-mono text-xs tracking-wide">
@@ -10,7 +10,7 @@ export default function Footer() {
         {/* Right: Social links */}
         <div className="flex gap-3">
           <a
-            href="https://twitter.com"
+            href="https://x.com/danielmnuoz"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-black text-white px-3 py-1.5 text-xs font-medium hover:opacity-80 transition-opacity"
@@ -18,7 +18,7 @@ export default function Footer() {
             TWITTER
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/danielmnuoz/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-black text-white px-3 py-1.5 text-xs font-medium hover:opacity-80 transition-opacity"
@@ -26,7 +26,7 @@ export default function Footer() {
             LINKEDIN
           </a>
           <a
-            href="mailto:hello@example.com"
+            href="mailto:dmnuozl@gmail.com"
             className="bg-black text-white px-3 py-1.5 text-xs font-medium hover:opacity-80 transition-opacity"
           >
             EMAIL

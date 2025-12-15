@@ -13,7 +13,7 @@ export default function Home() {
           {/* Image container - slightly off-center */}
           <div className="relative ml-24">
             <Image
-              src="/home.jpg"
+              src="/medellin.jpg"
               alt="Editorial photograph"
               width={800}
               height={600}
