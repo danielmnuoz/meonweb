@@ -22,13 +22,15 @@ export default function Home() {
             />
           </div>
 
-          {/* Overlapping "MY PORTFOLIO" text */}
-          <div className="absolute top-1/2 left-0 -translate-y-1/2">
-            <h2 className="text-8xl md:text-9xl font-serif font-bold leading-none">
-              MY
-              <br />
-              PORTFOLIO
-            </h2>
+          {/* Handwritten "Mi PAIS" overlay - positioned on left side */}
+          <div className="absolute top-1/2 -left-12 -translate-y-1/2">
+            <Image
+              src="/mi paiz !.png"
+              alt="Mi PAIS"
+              width={500}
+              height={250}
+              className="pointer-events-none"
+            />
           </div>
         </div>
       </main>
