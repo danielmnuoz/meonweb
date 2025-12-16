@@ -5,12 +5,12 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 bg-background z-50">
       <div className="max-w-[1600px] mx-auto px-8 py-6 flex items-baseline justify-between">
         {/* Left: Name */}
-        <div className="flex items-baseline gap-2">
+        <Link href="/" className="flex items-baseline gap-2 hover:opacity-60 transition-opacity">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
             DANIEL MUNOZ-LARA
           </h1>
           <span className="text-sm text-gray-600">but on the web.</span>
-        </div>
+        </Link>
 
         {/* Right: Navigation */}
         <nav className="flex gap-8">
