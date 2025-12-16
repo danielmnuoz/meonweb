@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-[1600px] mx-auto px-8 py-6 flex items-end justify-between">
         {/* Left: Dense metadata */}
         <div className="font-mono text-xs tracking-wide">
-          MADE IN USA · DESIGNED IN COLOMBIA · SOFTWARE, FINANCE, ART, MUSIC · EST. 2023 · ALL RIGHTS RESERVED
+          MADE IN USA · DESIGNED IN COLOMBIA · SOFTWARE, FINANCE, ART, MUSIC, FOOD · EST. 2023 · ALL RIGHTS RESERVED
         </div>
 
         {/* Right: Social links */}
