@@ -29,7 +29,7 @@ export default function Home() {
               alt="Mi PAIS"
               width={500}
               height={250}
-              className="pointer-events-none w-[200px] md:w-[500px] h-auto"
+              className="pointer-events-none w-[300px] md:w-[500px] h-auto"
             />
           </div>
         </div>
