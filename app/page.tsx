@@ -8,28 +8,28 @@ export default function Home() {
       <Header />
 
       {/* Main content area */}
-      <main className="flex-1 flex items-center justify-center px-8 py-24">
+      <main className="flex-1 flex items-center justify-center px-4 md:px-8 py-8 md:py-24">
         <div className="relative max-w-[1200px] w-full">
-          {/* Image container - slightly off-center */}
-          <div className="relative ml-24">
+          {/* Image container - slightly off-center on desktop */}
+          <div className="relative ml-0 md:ml-24">
             <Image
               src="/medellin.jpg"
               alt="Editorial photograph"
               width={800}
               height={600}
-              className="grayscale"
+              className="grayscale max-w-full md:max-w-none md:w-[800px]"
               priority
             />
           </div>
 
           {/* Handwritten "Mi PAIS" overlay - positioned on left side */}
-          <div className="absolute top-1/2 -left-12 -translate-y-1/2">
+          <div className="absolute top-12 md:top-1/2 left-8 md:-left-12 -translate-y-1/2 translate-x-0 md:-translate-x-0">
             <Image
               src="/mi paiz !.png"
               alt="Mi PAIS"
               width={500}
               height={250}
-              className="pointer-events-none"
+              className="pointer-events-none w-[200px] md:w-[500px] h-auto"
             />
           </div>
         </div>
