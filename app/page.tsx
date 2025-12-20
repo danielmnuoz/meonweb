@@ -23,13 +23,13 @@ export default function Home() {
           </div>
 
           {/* Handwritten "Mi PAIS" overlay - positioned on left side */}
-          <div className="absolute top-12 md:top-1/2 left-8 md:-left-12 -translate-y-1/2 translate-x-0 md:-translate-x-0">
+          <div className="absolute top-4 md:top-1/2 left-2 md:-left-12 -translate-y-1/2 translate-x-0 md:-translate-x-0">
             <Image
               src="/mi paiz !.png"
               alt="Mi PAIS"
               width={500}
               height={250}
-              className="pointer-events-none w-[300px] md:w-[500px] h-auto"
+              className="pointer-events-none w-[250px] md:w-[500px] h-auto"
             />
           </div>
         </div>
