@@ -87,8 +87,43 @@ function TypewriterText({ text, isActive }: { text: string; isActive: boolean })
   );
 }
 
+type IntroPhase = "waiting" | "ready" | "opening" | "done";
+
 export default function Team() {
   const [selectedPokemon, setSelectedPokemon] = useState<Pokemon | null>(null);
+  const [introPhase, setIntroPhase] = useState<IntroPhase>("waiting");
+  const [textVisible, setTextVisible] = useState(true);
+
+  // Wait 2 seconds before showing "TOUCH TO START"
+  useEffect(() => {
+    if (introPhase === "waiting") {
+      const timeout = setTimeout(() => {
+        setIntroPhase("ready");
+      }, 2000);
+      return () => clearTimeout(timeout);
+    }
+  }, [introPhase]);
+
+  // Blink the text every second when ready
+  useEffect(() => {
+    if (introPhase === "ready") {
+      const interval = setInterval(() => {
+        setTextVisible((prev) => !prev);
+      }, 500);
+      return () => clearInterval(interval);
+    }
+  }, [introPhase]);
+
+  // Handle click to start the opening animation
+  const handleStart = () => {
+    if (introPhase === "ready") {
+      setIntroPhase("opening");
+      // After animation completes (1s), mark as done
+      setTimeout(() => {
+        setIntroPhase("done");
+      }, 1000);
+    }
+  };
 
   return (
     <div
@@ -98,6 +133,42 @@ export default function Team() {
         imageRendering: "pixelated",
       }}
     >
+      {/* Intro overlay */}
+      {introPhase !== "done" && (
+        <div
+          className="fixed inset-0 z-[100] cursor-pointer"
+          onClick={handleStart}
+        >
+          {/* Top half */}
+          <div
+            className="absolute inset-x-0 top-0 h-1/2 bg-black transition-transform duration-1000 ease-in-out"
+            style={{
+              transform: introPhase === "opening" ? "translateY(-100%)" : "translateY(0)",
+            }}
+          />
+          {/* Bottom half */}
+          <div
+            className="absolute inset-x-0 bottom-0 h-1/2 bg-black transition-transform duration-1000 ease-in-out"
+            style={{
+              transform: introPhase === "opening" ? "translateY(100%)" : "translateY(0)",
+            }}
+          />
+          {/* TOUCH TO START text */}
+          {introPhase === "ready" && textVisible && (
+            <div className="absolute inset-0 flex items-center justify-center z-10">
+              <p
+                className="text-white text-3xl md:text-5xl tracking-widest text-center"
+                style={{
+                  textShadow: "4px 4px 0px rgba(0,0,0,0.8)",
+                }}
+              >
+                TOUCH TO START
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Back button */}
       <Link
         href="/"
