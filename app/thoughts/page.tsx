@@ -1,28 +1,45 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { dummyThoughts } from "./data";
 import { formatDate, formatDateShort } from "./utils";
+import { Thought } from "./types";
 
 type Tab = "latest" | "search";
 
 export default function Thoughts() {
   const [activeTab, setActiveTab] = useState<Tab>("latest");
   const [searchQuery, setSearchQuery] = useState("");
+  const [newThoughts, setNewThoughts] = useState<Thought[]>([]);
+
+  // Load new thoughts from localStorage on mount
+  useEffect(() => {
+    const stored = localStorage.getItem("newThoughts");
+    if (stored) {
+      setNewThoughts(JSON.parse(stored));
+    }
+  }, []);
+
+  // Combine new thoughts with dummy data (new first, sorted by date)
+  const allThoughts = useMemo(() => {
+    return [...newThoughts, ...dummyThoughts].sort(
+      (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+    );
+  }, [newThoughts]);
 
   const filteredThoughts = useMemo(() => {
     if (activeTab === "latest" || !searchQuery.trim()) {
-      return dummyThoughts;
+      return allThoughts;
     }
     const query = searchQuery.toLowerCase();
-    return dummyThoughts.filter((thought) => {
+    return allThoughts.filter((thought) => {
       const contentMatch = thought.content.toLowerCase().includes(query);
       const dateMatch = formatDate(thought.created_at).toLowerCase().includes(query);
       return contentMatch || dateMatch;
     });
-  }, [activeTab, searchQuery]);
+  }, [activeTab, searchQuery, allThoughts]);
 
   return (
     <div className="min-h-screen flex flex-col">
