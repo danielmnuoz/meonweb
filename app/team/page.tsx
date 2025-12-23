@@ -18,40 +18,40 @@ interface Pokemon {
 
 const team: Pokemon[] = [
   {
+    name: "TYPHLOSION",
+    image: "/typhlosion.png",
+    description:
+      "The first pokemon I ever chose. I believe that raising a starter makes you attatched to a pokemon compared to others, and cyndaquil was an obvious pick for me. Eventhough many times I considered subbing him out for others, I love this little dude.",
+  },
+  {
     name: "SCEPTILE",
     image: "/sceptile.png",
     description:
-      "The first Pokemon I ever chose. Sceptile represents the beginning of my journey, and its speed and elegance have always resonated with me. A true starter for life.",
-  },
-  {
-    name: "UMBREON",
-    image: "/umbreon.png",
-    description:
-      "There's something about Umbreon's quiet strength that I admire. A Pokemon that thrives in darkness, patient and resilient. The perfect partner for late nights.",
+      "FAST. Maxing out his speed and attack makes him a deadly sweeper, although he is one of very few grass types that I like.",
   },
   {
     name: "GARCHOMP",
     image: "/garchomp.png",
     description:
-      "Raw power meets precision. Garchomp doesn't hesitate, doesn't second-guess. When you need something done, you call on Garchomp.",
+      "Dragon and Ground? Give me dragon claw and earthquake and he can take out the Elite 4 himself.",
   },
   {
-    name: "CHANDELURE",
-    image: "/chandelure.png",
+    name: "GENGAR",
+    image: "/gengar.png",
     description:
-      "Hauntingly beautiful and devastatingly powerful. Chandelure brings an elegance to battle that few Pokemon can match. Style and substance.",
+      "I don't have to explain... its Gengar. Max out his speed/special attack an it's free.",
   },
   {
     name: "SNORLAX",
     image: "/snorlax.png",
     description:
-      "Sometimes you need a wall. Sometimes you need a friend who understands the value of a good nap. Snorlax is both. An immovable force of comfort.",
+      "Old reliable. Most of the times he is used simply as a punching bag while I figure out what to do next. Snorlax + leftovers = infinite rounds.",
   },
   {
     name: "ZEKROM",
     image: "/zekrom.png",
     description:
-      "The legendary anchor of the team. Zekrom represents ideals and the pursuit of truth. When everything is on the line, Zekrom answers the call.",
+      "The legendary anchor of the team. He is nowhere near a competitive pick, but look at him! Dude is a demon.",
   },
 ];
 
@@ -203,7 +203,7 @@ export default function Team() {
               onMouseEnter={() => setSelectedPokemon(pokemon)}
               className={`relative p-2 transition-transform duration-200 ${
                 selectedPokemon?.name === pokemon.name
-                  ? "scale-110"
+                  ? "scale-125"
                   : "hover:scale-105"
               }`}
             >
