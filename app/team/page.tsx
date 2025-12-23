@@ -192,7 +192,7 @@ export default function Team() {
 
         {/* Pokemon grid */}
         <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-8 mb-8">
-          {team.map((pokemon) => (
+          {team.map((pokemon, index) => (
             <button
               key={pokemon.name}
               onClick={() =>
@@ -201,20 +201,27 @@ export default function Team() {
                 )
               }
               onMouseEnter={() => setSelectedPokemon(pokemon)}
-              className={`relative p-2 transition-all duration-200 ${
+              className={`relative p-2 transition-transform duration-200 ${
                 selectedPokemon?.name === pokemon.name
-                  ? "scale-110 -translate-y-2"
+                  ? "scale-110"
                   : "hover:scale-105"
               }`}
             >
-              <Image
-                src={pokemon.image}
-                alt={pokemon.name}
-                width={96}
-                height={96}
-                className="w-16 h-16 md:w-24 md:h-24 object-contain"
-                style={{ imageRendering: "pixelated" }}
-              />
+              <div
+                className="animate-float"
+                style={{
+                  animationDelay: `${index * 0.15}s`,
+                }}
+              >
+                <Image
+                  src={pokemon.image}
+                  alt={pokemon.name}
+                  width={96}
+                  height={96}
+                  className="w-16 h-16 md:w-24 md:h-24 object-contain"
+                  style={{ imageRendering: "pixelated" }}
+                />
+              </div>
               {/* Name label */}
               <p
                 className="text-white text-[10px] md:text-xs mt-1 text-center"
