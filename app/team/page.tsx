@@ -91,8 +91,24 @@ type IntroPhase = "waiting" | "ready" | "opening" | "done";
 
 export default function Team() {
   const [selectedPokemon, setSelectedPokemon] = useState<Pokemon | null>(null);
+  const [revealedPokemon, setRevealedPokemon] = useState<Set<string>>(new Set());
   const [introPhase, setIntroPhase] = useState<IntroPhase>("waiting");
   const [textVisible, setTextVisible] = useState(true);
+
+  const handlePokemonClick = (pokemon: Pokemon) => {
+    const isRevealed = revealedPokemon.has(pokemon.name);
+
+    if (!isRevealed) {
+      // Reveal the Pokemon
+      setRevealedPokemon((prev) => new Set([...prev, pokemon.name]));
+      setSelectedPokemon(pokemon);
+    } else {
+      // Toggle selection for already revealed Pokemon
+      setSelectedPokemon(
+        selectedPokemon?.name === pokemon.name ? null : pokemon
+      );
+    }
+  };
 
   // Wait 2 seconds before showing "TOUCH TO START"
   useEffect(() => {
@@ -192,45 +208,76 @@ export default function Team() {
 
         {/* Pokemon grid */}
         <div className="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-8 mb-8">
-          {team.map((pokemon, index) => (
-            <button
-              key={pokemon.name}
-              onClick={() =>
-                setSelectedPokemon(
-                  selectedPokemon?.name === pokemon.name ? null : pokemon
-                )
-              }
-              onMouseEnter={() => setSelectedPokemon(pokemon)}
-              className={`relative p-2 transition-transform duration-200 ${
-                selectedPokemon?.name === pokemon.name
-                  ? "scale-125"
-                  : "hover:scale-105"
-              }`}
-            >
-              <div
-                className="animate-float"
-                style={{
-                  animationDelay: `${index * 0.15}s`,
-                }}
+          {team.map((pokemon, index) => {
+            const isRevealed = revealedPokemon.has(pokemon.name);
+            const isSelected = selectedPokemon?.name === pokemon.name;
+
+            return (
+              <button
+                key={pokemon.name}
+                onClick={() => handlePokemonClick(pokemon)}
+                className={`relative p-2 transition-transform duration-200 ${
+                  isRevealed && isSelected
+                    ? "scale-125 z-10"
+                    : isRevealed
+                    ? "hover:scale-110"
+                    : "hover:scale-105"
+                }`}
               >
-                <Image
-                  src={pokemon.image}
-                  alt={pokemon.name}
-                  width={96}
-                  height={96}
-                  className="w-16 h-16 md:w-24 md:h-24 object-contain"
-                  style={{ imageRendering: "pixelated" }}
-                />
-              </div>
-              {/* Name label */}
-              <p
-                className="text-white text-[10px] md:text-xs mt-1 text-center"
-                style={{ textShadow: "2px 2px 0px rgba(0,0,0,0.8)" }}
-              >
-                {pokemon.name}
-              </p>
-            </button>
-          ))}
+                {isRevealed ? (
+                  // Revealed Pokemon with pop-in animation
+                  <div
+                    className="animate-pop-in"
+                    style={{
+                      animationDelay: "0s",
+                    }}
+                  >
+                    <div
+                      className="animate-float"
+                      style={{
+                        animationDelay: `${index * 0.15}s`,
+                      }}
+                    >
+                      <Image
+                        src={pokemon.image}
+                        alt={pokemon.name}
+                        width={96}
+                        height={96}
+                        className="w-16 h-16 md:w-24 md:h-24 object-contain"
+                        style={{ imageRendering: "pixelated" }}
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  // Pokeball with shake animation
+                  <div
+                    className="animate-shake"
+                    style={{
+                      animationDelay: `${index * 0.3}s`,
+                    }}
+                  >
+                    <Image
+                      src="/poke.png"
+                      alt="Pokeball"
+                      width={96}
+                      height={96}
+                      className="w-16 h-16 md:w-24 md:h-24 object-contain"
+                      style={{ imageRendering: "pixelated" }}
+                    />
+                  </div>
+                )}
+                {/* Name label - only shown when revealed */}
+                <p
+                  className={`text-white text-[10px] md:text-xs mt-1 text-center transition-opacity ${
+                    isRevealed ? "opacity-100" : "opacity-0"
+                  }`}
+                  style={{ textShadow: "2px 2px 0px rgba(0,0,0,0.8)" }}
+                >
+                  {pokemon.name}
+                </p>
+              </button>
+            );
+          })}
         </div>
 
         {/* Dialogue box */}
@@ -250,7 +297,7 @@ export default function Team() {
               />
             ) : (
               <span className="text-gray-400">
-                Select a Pokemon to learn more...
+                Click a Pokeball to reveal...
               </span>
             )}
           </p>
