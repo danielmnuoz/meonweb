@@ -31,6 +31,7 @@ export default function About() {
 
           {/* Biography Section */}
           <div className="space-y-6 text-lg leading-relaxed mb-24">
+            <p>Include mentions of clemson university maybe, spanish bilingula, Series 65, how would I get resume, button? </p>
             <p>
               I’m Daniel. I’m a software engineer with a computer science background,
               but at my core I’m someone who enjoys creating and staying curious
