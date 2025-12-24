@@ -12,8 +12,12 @@ export default function Footer() {
           </Link>
         </div>
         {/* Simplified metadata for mobile */}
-        <div className="md:hidden font-mono text-[10px] tracking-wide text-center text-gray-600">
-          EST. 2023 · ALL RIGHTS RESERVED
+        <div className="md:hidden font-mono text-[10px] tracking-wide text-center text-gray-600 flex items-center justify-center gap-2">
+          <span>EST. 2023</span>
+          <Link href="/team">
+            <div className="pokemon-sprite" />
+          </Link>
+          <span>MADE IN USA</span>
         </div>
 
         {/* Right: Social links */}

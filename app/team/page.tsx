@@ -115,7 +115,7 @@ export default function Team() {
     if (introPhase === "waiting") {
       const timeout = setTimeout(() => {
         setIntroPhase("ready");
-      }, 2000);
+      }, 500);
       return () => clearTimeout(timeout);
     }
   }, [introPhase]);
@@ -143,7 +143,7 @@ export default function Team() {
 
   return (
     <div
-      className={`min-h-screen bg-repeat flex flex-col ${pokemonFont.className}`}
+      className={`min-h-screen bg-cover bg-center flex flex-col ${pokemonFont.className}`}
       style={{
         backgroundImage: "url('/pixelgrass.png')",
         imageRendering: "pixelated",
