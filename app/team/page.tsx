@@ -51,7 +51,7 @@ const team: Pokemon[] = [
     name: "ZEKROM",
     image: "/zekrom.png",
     description:
-      "Legendary goat. He is nowhere near a competitive pick, but look at him! I can't not have him on my team.",
+      "Legendary goat. He is nowhere near a competitive pick, but look at him. I can't not have him on my team.",
   },
 ];
 
