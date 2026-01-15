@@ -35,7 +35,7 @@ export default function Home() {
         </div>
       </main>
 
-      <Footer />
+      <Footer fixed />
     </div>
   );
 }
