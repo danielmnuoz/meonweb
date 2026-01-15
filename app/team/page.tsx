@@ -27,31 +27,31 @@ const team: Pokemon[] = [
     name: "SCEPTILE",
     image: "/sceptile.png",
     description:
-      "FAST. Maxing out his speed and attack makes him a deadly sweeper, although he is one of very few grass types that I like.",
+      "bro just looks cool. AND FAST.",
   },
   {
     name: "GARCHOMP",
     image: "/garchomp.png",
     description:
-      "Dragon and Ground? Give me dragon claw and earthquake and he can take out the Elite 4 himself.",
+      "Dragon and Ground? Give me dragon claw and earthquake and I can solo the elite 4.",
   },
   {
     name: "GENGAR",
     image: "/gengar.png",
     description:
-      "I don't have to explain... its Gengar. Max out his speed/special attack an it's free.",
+      "I don't have to explain... its Gengar. Simply max out his speed/special attack and you good to go.",
   },
   {
     name: "SNORLAX",
     image: "/snorlax.png",
     description:
-      "Old reliable. Most of the times he is used simply as a punching bag while I figure out what to do next. Snorlax + leftovers = infinite rounds.",
+      "Old reliable. Most of the times he is used as a punching bag while I figure out what to do next lol. Snorlax + leftovers = infinite rounds.",
   },
   {
     name: "ZEKROM",
     image: "/zekrom.png",
     description:
-      "The legendary anchor of the team. He is nowhere near a competitive pick, but look at him! Dude is a demon.",
+      "Legendary goat. He is nowhere near a competitive pick, but look at him! I can't not have him on my team.",
   },
 ];
 
