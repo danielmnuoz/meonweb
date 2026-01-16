@@ -21,7 +21,7 @@ export default function About() {
           {/* Portrait Photo */}
           <div className="mb-16">
             <Image
-              src="/mohr.jpg"
+              src="/icarus.jpg"
               alt="Daniel Munoz-Lara"
               width={800}
               height={600}
