@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         background: "#FBFBFB",
         foreground: "#000000",
+        accent: "#C678DD",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
@@ -21,6 +22,7 @@ const config: Config = {
         float: "float 2s ease-in-out infinite",
         shake: "shake 2s ease-in-out infinite",
         "pop-in": "popIn 0.4s ease-out forwards",
+        "fade-in": "fadeIn 0.6s ease-out forwards",
       },
       keyframes: {
         float: {
@@ -37,6 +39,10 @@ const config: Config = {
           "0%": { transform: "scale(0)", opacity: "0" },
           "70%": { transform: "scale(1.1)" },
           "100%": { transform: "scale(1)", opacity: "1" },
+        },
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
     },

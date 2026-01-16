@@ -1,8 +1,12 @@
 import Link from "next/link";
 
-export default function Footer() {
+interface FooterProps {
+  fixed?: boolean;
+}
+
+export default function Footer({ fixed = false }: FooterProps) {
   return (
-    <footer className="fixed bottom-0 left-0 right-0 bg-background">
+    <footer className={`bg-background relative z-20 ${fixed ? 'fixed bottom-0 left-0 right-0' : ''}`}>
       <div className="max-w-[1600px] mx-auto px-4 md:px-8 py-4 md:py-6 flex flex-col-reverse md:flex-row items-center md:items-end justify-between gap-3 md:gap-0">
         {/* Left: Dense metadata - hidden on mobile, shown on desktop */}
         <div className="hidden md:flex items-center gap-3 font-mono text-xs tracking-wide">

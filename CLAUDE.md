@@ -14,7 +14,6 @@ Personal portfolio website for Daniel Munoz-Lara. Editorial / newspaper-inspired
 - Navigation links (pages can be placeholders)
 
 **Explicitly Out of Scope:**
-- Heavy animations (especially on load)
 - Thoughts / writing system
 - Authentication
 - Project deep-dives
@@ -68,6 +67,7 @@ Personal portfolio website for Daniel Munoz-Lara. Editorial / newspaper-inspired
 
 ## Development Principles
 
+- If an instruction is unclear or if clarification is needed, ask before executing code
 - Keep things simple
 - Prioritize clarity over features
 - Avoid premature abstraction

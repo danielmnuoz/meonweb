@@ -46,7 +46,7 @@ export default function Thoughts() {
       <Header />
 
       <main className="flex-1 px-4 md:px-8 pt-28 md:pt-32 pb-12 md:pb-16">
-        <div className="max-w-[800px] mx-auto">
+        <div className="max-w-[800px] mx-auto animate-fade-in">
           {/* Tabs */}
           <div className="flex items-center gap-8 mb-8 border-b border-neutral-200 pb-4">
             <button
