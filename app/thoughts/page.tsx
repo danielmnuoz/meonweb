@@ -3,7 +3,6 @@
 import { useState, useMemo, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { dummyThoughts } from "./data";
 import { formatDate, formatDateShort } from "./utils";
 import { Thought } from "./types";
 
@@ -25,13 +24,9 @@ export default function Thoughts() {
           setThoughts(data);
         } else {
           console.error("Failed to fetch thoughts");
-          // Fallback to dummy data if API fails
-          setThoughts(dummyThoughts);
         }
       } catch (error) {
         console.error("Error fetching thoughts:", error);
-        // Fallback to dummy data if API fails
-        setThoughts(dummyThoughts);
       } finally {
         setLoading(false);
       }

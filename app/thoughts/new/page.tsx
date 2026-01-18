@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { Thought } from "../types";
 
 export default function NewThought() {
   const router = useRouter();
