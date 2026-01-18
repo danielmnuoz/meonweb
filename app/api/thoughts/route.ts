@@ -1,4 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
+import { sql } from "@vercel/postgres";
+
+export async function GET() {
+  try {
+    const result = await sql`
+      SELECT id, content, image_url, created_at
+      FROM thoughts
+      ORDER BY created_at DESC
+    `;
+
+    return NextResponse.json(result.rows);
+  } catch (error) {
+    console.error("Error fetching thoughts:", error);
+    return NextResponse.json(
+      { error: "Failed to fetch thoughts" },
+      { status: 500 }
+    );
+  }
+}
 
 export async function POST(request: NextRequest) {
   // Check authorization header
@@ -31,13 +50,21 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Create the new thought
-  const newThought = {
-    id: crypto.randomUUID(),
-    content: content.trim(),
-    image_url: null,
-    created_at: new Date().toISOString(),
-  };
+  try {
+    // Insert the thought into the database
+    const result = await sql`
+      INSERT INTO thoughts (content, image_url)
+      VALUES (${content.trim()}, NULL)
+      RETURNING id, content, image_url, created_at
+    `;
 
-  return NextResponse.json(newThought, { status: 201 });
+    const newThought = result.rows[0];
+    return NextResponse.json(newThought, { status: 201 });
+  } catch (error) {
+    console.error("Error creating thought:", error);
+    return NextResponse.json(
+      { error: "Failed to create thought" },
+      { status: 500 }
+    );
+  }
 }

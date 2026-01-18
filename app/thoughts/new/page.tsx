@@ -33,15 +33,10 @@ export default function NewThought() {
         throw new Error(data.error || "Failed to create thought");
       }
 
-      const newThought: Thought = await response.json();
+      // Thought is now saved in the database
+      await response.json();
 
-      // Store in localStorage to persist across page navigation
-      const stored = localStorage.getItem("newThoughts");
-      const newThoughts: Thought[] = stored ? JSON.parse(stored) : [];
-      newThoughts.unshift(newThought);
-      localStorage.setItem("newThoughts", JSON.stringify(newThoughts));
-
-      // Redirect to thoughts page
+      // Redirect to thoughts page (it will fetch from database)
       router.push("/thoughts");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");

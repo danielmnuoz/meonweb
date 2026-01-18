@@ -12,22 +12,35 @@ type Tab = "latest" | "search";
 export default function Thoughts() {
   const [activeTab, setActiveTab] = useState<Tab>("latest");
   const [searchQuery, setSearchQuery] = useState("");
-  const [newThoughts, setNewThoughts] = useState<Thought[]>([]);
+  const [thoughts, setThoughts] = useState<Thought[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  // Load new thoughts from localStorage on mount
+  // Fetch thoughts from database on mount
   useEffect(() => {
-    const stored = localStorage.getItem("newThoughts");
-    if (stored) {
-      setNewThoughts(JSON.parse(stored));
+    async function fetchThoughts() {
+      try {
+        const response = await fetch("/api/thoughts");
+        if (response.ok) {
+          const data = await response.json();
+          setThoughts(data);
+        } else {
+          console.error("Failed to fetch thoughts");
+          // Fallback to dummy data if API fails
+          setThoughts(dummyThoughts);
+        }
+      } catch (error) {
+        console.error("Error fetching thoughts:", error);
+        // Fallback to dummy data if API fails
+        setThoughts(dummyThoughts);
+      } finally {
+        setLoading(false);
+      }
     }
+    fetchThoughts();
   }, []);
 
-  // Combine new thoughts with dummy data (new first, sorted by date)
-  const allThoughts = useMemo(() => {
-    return [...newThoughts, ...dummyThoughts].sort(
-      (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
-    );
-  }, [newThoughts]);
+  // Thoughts are already sorted by created_at DESC from the API
+  const allThoughts = thoughts;
 
   const filteredThoughts = useMemo(() => {
     if (activeTab === "latest" || !searchQuery.trim()) {
@@ -106,7 +119,11 @@ export default function Thoughts() {
           )}
 
           {/* Thoughts feed */}
-          {filteredThoughts.length > 0 ? (
+          {loading ? (
+            <div className="py-16 text-center">
+              <p className="text-neutral-400 text-lg">Loading thoughts...</p>
+            </div>
+          ) : filteredThoughts.length > 0 ? (
             <div className="divide-y divide-neutral-200">
               {filteredThoughts.map((thought) => (
                 <article
