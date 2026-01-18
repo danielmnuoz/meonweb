@@ -4,11 +4,11 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="h-screen overflow-hidden flex flex-col">
       <Header />
 
-      {/* Main content area */}
-      <main className="flex-1 flex items-center justify-center px-4 md:px-8 py-8 md:py-24">
+      {/* Main content area - padded for fixed header */}
+      <main className="flex-1 flex items-center justify-center px-4 md:px-8 pt-28 md:pt-32">
         <div className="relative max-w-[1200px] w-full">
           {/* Image container - slightly off-center on desktop */}
           <div className="relative ml-0 md:ml-24">
@@ -35,7 +35,7 @@ export default function Home() {
         </div>
       </main>
 
-      <Footer fixed />
+      <Footer />
     </div>
   );
 }
