@@ -10,7 +10,7 @@ export default function Footer({ fixed = false }: FooterProps) {
       <div className="max-w-[1600px] mx-auto px-4 md:px-8 py-4 md:py-6 flex flex-col-reverse md:flex-row items-center md:items-end justify-between gap-3 md:gap-0">
         {/* Left: Dense metadata - hidden on mobile, shown on desktop */}
         <div className="hidden md:flex items-center gap-3 font-mono text-xs tracking-wide">
-          <span>MADE IN USA · DESIGNED IN COLOMBIA · SOFTWARE, FINANCE, ART, MUSIC, FOOD · EST. 2023 · ALL RIGHTS RESERVED</span>
+          <span>MADE IN PARIS · SOFTWARE, FINANCE, ART, MUSIC, FOOD · EST. 2023 · ALL RIGHTS RESERVED</span>
           <Link href="/team">
             <div className="pokemon-sprite" />
           </Link>
@@ -21,7 +21,7 @@ export default function Footer({ fixed = false }: FooterProps) {
           <Link href="/team">
             <div className="pokemon-sprite" />
           </Link>
-          <span>MADE IN USA</span>
+          <span>MADE IN PARIS</span>
         </div>
 
         {/* Right: Social links */}
