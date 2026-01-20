@@ -8,7 +8,7 @@ export default function About() {
       <Header />
 
       {/* Main content area */}
-      <main className="flex-1 px-8 py-32">
+      <main className="flex-1 px-8 pt-32">
         <div className="max-w-3xl mx-auto">
           {/* Page Title Section */}
           <div className="mb-16">
