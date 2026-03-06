@@ -37,9 +37,10 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-white px-4">
       <div className="w-full max-w-sm">
-        <h1 className="text-2xl font-medium mb-8 text-center">
-          Site Access
-        </h1>
+        <div className="mb-4 text-center">
+          <h1 className="text-2xl font-medium">COMING SOON.</h1>
+          <p className="text-sm">like mid march if all goes well lol</p>
+        </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
