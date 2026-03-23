@@ -21,25 +21,25 @@ const team: Pokemon[] = [
     name: "TYPHLOSION",
     image: "/typhlosion.png",
     description:
-      "The first pokemon I ever chose. I believe that raising a starter makes you attatched to a pokemon compared to others, and cyndaquil was an obvious pick for me. Eventhough many times I considered subbing him out for others, I love this little dude.",
+      "The first pokemon I ever chose. I think the starter pick makes you attatched to a pokemon compared to others, and cyndaquil was my OG. Eventhough many times I considered subbing him out for others, I love this little dude.",
   },
   {
     name: "SCEPTILE",
     image: "/sceptile.png",
     description:
-      "bro just looks cool. AND FAST.",
+      "bro just looks cool",
   },
   {
     name: "GARCHOMP",
     image: "/garchomp.png",
     description:
-      "Dragon and Ground? Give me dragon claw and earthquake and I can solo the elite 4.",
+      "Dragon and Ground? give me dragon claw and earthquake and I can solo the elite 4.",
   },
   {
     name: "GENGAR",
     image: "/gengar.png",
     description:
-      "I don't have to explain... its Gengar. Simply max out his speed/special attack and you good to go.",
+      "I don't have to explain... its Gengar. Max out his speed/special attack and its free.",
   },
   {
     name: "SNORLAX",
@@ -51,7 +51,7 @@ const team: Pokemon[] = [
     name: "ZEKROM",
     image: "/zekrom.png",
     description:
-      "Legendary goat. He is nowhere near a competitive pick, but look at him. I can't not have him on my team.",
+      "Legendary goat. Hes probably not a good pick competitively, but look at him. I can't not have him on my team.",
   },
 ];
 
@@ -203,7 +203,7 @@ export default function Team() {
             textShadow: "4px 4px 0px rgba(0,0,0,0.8)",
           }}
         >
-          Who would be on my Pokémon team?
+          Who makin it on the Pokémon team?
         </h1>
 
         {/* Pokemon grid */}
