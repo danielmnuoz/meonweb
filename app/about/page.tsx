@@ -18,11 +18,11 @@ export default function About() {
           {/* Portrait Photo */}
           <div className="mb-16">
             <Image
-              src="/icarus.jpg"
+              src="/egon.jpg"
               alt="Daniel Munoz-Lara"
               width={800}
               height={600}
-              className="grayscale w-full"
+              className="w-full"
             />
           </div>
 
