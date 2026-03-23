@@ -1,2 +1,4 @@
 # meonweb
-New and improved personal website to represent everything me. 
+personal website to represent everything me. 
+
+look for the pokemon page ! :)

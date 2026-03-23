@@ -7,31 +7,39 @@ import Footer from "../components/Footer";
 const projects = [
   {
     id: "001",
+    name: "TRAVEL TOMORROW",
+    sector: "PRODUCT",
+    problem: "Travel planning tools make it hard to quickly plan a trip and its activities by location, time, and budget.",
+    solution: "Built an itinerary planner that groups places by area, organizes days intelligently, and estimates transport and spending in one flow.",
+    github: "https://github.com/danielmnuoz/travel-tomorrow",
+    githubLabel: "[GITHUB]",
+  },
+  {
+    id: "002",
     name: "PROJECT KIM",
     sector: "DATA",
     problem: "Measuring how live-stream moments escape their original platforms.",
     solution: "Built pipelines to compare engagement across short-form platforms.",
-  },
-  {
-    id: "002",
-    name: "PARIS TOMORROW",
-    sector: "PRODUCT",
-    problem: "Travel planning tools make it hard to quickly plan a trip and its activities by location, time, and budget.",
-    solution: "Built an itinerary planner that groups places by area, organizes days intelligently, and estimates transport and spending in one flow.",
+    github: null,
+    githubLabel: "PRIVATE",
   },
   {
     id: "003",
+    name: "YIELD TOKENS",
+    sector: "FINANCE",
+    problem: "Revenue streams like subscriptions, ad income, and SaaS fees are illiquid and hard to value in real time.",
+    solution: "Building a simulation platform that models tokenized cash flows, letting users visualize and compare yield from different revenue types before anything hits the chain.",
+    github: null,
+    githubLabel: "SOON",
+  },
+  {
+    id: "004",
     name: "PORTFOLIO WEBSITE",
     sector: "WEB",
     problem: "Portfolio websites are often more complex than they need to be.",
     solution: "Built this site with Next.js, emphasizing restraint and clarity.",
-  },
-  {
-    id: "004",
-    name: "WAVELENGTH",
-    sector: "PRODUCT",
-    problem: "Discovering new music through algorithms feels passive.",
-    solution: "Created a tool that surfaces music based on lyrical themes and moods.",
+    github: "https://github.com/danielmnuoz/meonweb",
+    githubLabel: "[GITHUB]",
   },
 ];
 
@@ -512,14 +520,20 @@ export default function Projects() {
                   <span className="text-[9px] font-mono text-gray-400">
                     DWG-{project.id}-REV.A
                   </span>
-                  <a
-                    href="https://github.com/danielmnuoz"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs font-mono hover:underline"
-                  >
-                    [GITHUB]
-                  </a>
+                  {project.github ? (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-mono hover:underline"
+                    >
+                      {project.githubLabel}
+                    </a>
+                  ) : (
+                    <span className="text-xs font-mono text-gray-400">
+                      {project.githubLabel}
+                    </span>
+                  )}
                 </div>
               </article>
             ))}

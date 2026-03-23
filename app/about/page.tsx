@@ -29,21 +29,21 @@ export default function About() {
           {/* Biography Section */}
           <div className="space-y-6 text-lg leading-relaxed mb-24">
             <p>
-              Hi, my name is Daniel Munoz-Lara—though I assume you may already know that unless you randomly landed on this page by typing in danielmunoz.com/about and missed the giant header with my name on it.
+              Hello, my name is Daniel Munoz-Lara—though I assume you may already know that unless you randomly landed on this page by typing in danielmunoz.com/about and missed the giant header with my name on it.
               Regardless, this is my portfolio website, and on this page I’ll go over some things you may or may not know about me.
             </p>
             <p>
-              To start, I studied Computer Science at Clemson University. Both my parents and my sister were born in Colombia, and although I was born in the United States, I grew up speaking Spanish and carry Colombia—and the rest of my family there—close to my heart. At my core, I’m someone who enjoys creating and staying curious about how the world works, both technically and culturally. Lately, my hobbies have been more focused on creation, from woodworking to cooking, but professionally, I work in the creation of software.
+              To start, I studied Computer Science at Clemson University. Both my parents and my sister were born in Colombia, and although my twin and I were born in the United States, I grew up speaking Spanish and carry Colombia—and the rest of my family there—close to my heart. At my core, I’m someone who enjoys creating and staying curious about how the world works, both technically and culturally. Lately, my hobbies have been more focused on creation, from sketching to cooking, but professionally, I work in the creation of software.
             </p>
             <p>
-              As an engineer, I have a growing interest in how complex systems are built, maintained, and kept reliable at scale. Over the past couple of years, I’ve enjoyed designing and delivering new features for customers, and I’ve worked on breaking a monolithic application into a microservice architecture. This meant taking real ownership of individual services—not just the code, but also how they’re deployed, monitored, and kept online. To me, this experience is highly valuable in understanding software as more than just code, especially in this age of artificial intelligence, where people often overlook the infrastructure and systems that support these applications.
+              As an engineer, I have a growing interest in how complex systems are built, maintained, and kept reliable at scale. Over the past couple of years, I’ve enjoyed designing and delivering new features for customers, and I’ve worked on breaking a monolithic application into a microservice architecture. This meant taking real ownership of individual services—not just the code, but also how they’re deployed, monitored, and kept online. To me, this experience is highly valuable in understanding software as more than just code, especially in this age of artificial intelligence, where people often overlook the infrastructure and systems that support these scalable applications.
             </p>
             <p>
               Outside of tech, I enjoy various sports, traveling, and pulling
               inspiration from people and fields far outside engineering. I’m also
               deeply interested in the financial systems that shape our world — analyzing
               companies, markets, and broader economic health as interconnected systems
-              rather than just vehicles for returns. In an effort to boost this knowledge, I am currently studying for the Series 65 exam to call myself a licensed Investment Advisor.
+              rather than just vehicles for returns. In an effort to boost this knowledge, I am currently studying for the Series 65 exam to be registered as a licensed Investment Advisor.
               I care about making complex systems more understandable and accessible to those who don’t always have the tools or
               financial literacy readily available. I’m drawn to work that blends technical
               problem-solving with curiosity about culture, incentives, and how people
