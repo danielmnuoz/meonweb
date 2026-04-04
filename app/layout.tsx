@@ -25,6 +25,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Daniel Munoz-Lara",
   description: "Personal portfolio and website",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
