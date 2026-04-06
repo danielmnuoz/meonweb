@@ -473,7 +473,7 @@ export default function Projects() {
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
                 PROJECTS
               </h1>
-              <span className="text-xs font-mono text-gray-400 hidden sm:inline">REV. 2024.01</span>
+              <span className="text-xs font-mono text-gray-400 hidden sm:inline">REV. 2026.01</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-8 h-px bg-gray-300 hidden sm:block" />
@@ -543,7 +543,7 @@ export default function Projects() {
           <div className={`mt-12 md:mt-16 border-t border-gray-200 pt-4 transition-all duration-700 ${showContent ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: '600ms' }}>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-[10px] font-mono text-gray-400">
               <span>STATUS: IN PROGRESS</span>
-              <span>LAST UPDATED: 2024.01</span>
+              <span>LAST UPDATED: 2026.01</span>
             </div>
           </div>
         </div>
