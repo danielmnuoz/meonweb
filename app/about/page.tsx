@@ -36,13 +36,12 @@ export default function About() {
               To start, I studied Computer Science at Clemson University. Both my parents and my sister were born in Colombia, and although my twin and I were born in the United States, I grew up speaking Spanish and carry Colombia—and the rest of my family there—close to my heart. At my core, I’m someone who enjoys creating and staying curious about how the world works, both technically and culturally. Lately, my hobbies have been more focused on creation, from sketching to cooking, but professionally, I work in the creation of software.
             </p>
             <p>
-              As an engineer, I have a growing interest in how complex systems are built, maintained, and kept reliable at scale. Over the past couple of years, I’ve enjoyed designing and delivering new features for customers, and I’ve worked on breaking a monolithic application into a microservice architecture. This meant taking real ownership of individual services—not just the code, but also how they’re deployed, monitored, and kept online. To me, this experience is highly valuable in understanding software as more than just code, especially in this age of artificial intelligence, where people often overlook the infrastructure and systems that support these scalable applications.
+              As an engineer, I have a growing interest in how complex systems are built, maintained, and kept reliable at scale. Over the past couple of years, I’ve enjoyed designing and delivering new features for customers, and I’ve worked on breaking a monolithic application into a microservice architecture. This meant taking real ownership of individual services: not just the code, but also how they’re deployed, monitored, and kept online. To me, this experience is highly valuable in understanding software as more than just code, especially in this age of artificial intelligence, where people often overlook the infrastructure and systems that support these scalable applications.
             </p>
             <p>
               Outside of tech, I enjoy various sports, traveling, and pulling
               inspiration from people and fields far outside engineering. I’m also
-              deeply interested in the financial systems that shape our world — analyzing
-              companies, markets, and broader economic health as interconnected systems
+              deeply interested in the financial systems that shape our world. I tend to analyze companies, markets, and broader economic health as interconnected systems
               rather than just vehicles for returns. In an effort to boost this knowledge, I am currently studying for the Series 65 exam to be registered as a licensed Investment Advisor.
               I care about making complex systems more understandable and accessible to those who don’t always have the tools or
               financial literacy readily available. I’m drawn to work that blends technical
@@ -52,7 +51,7 @@ export default function About() {
               or even how the languages we learn can change the way we think and perceive the world. 
             </p>
             <p>
-              If you’re interested in what I’m working on or want to talk about software, finances, or anything I mentioned above, feel free to reach out. 
+              If you’re interested in what I’m working on or want to talk about software, finances, or anything I mentioned above, feel free to reach out! 
             </p>
           </div>
 
